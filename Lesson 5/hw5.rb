@@ -1,6 +1,14 @@
+x = 0.1
+
 begin
-	print "\r|"
-	print "\r/"
-	print "\r-"
-	print "\r\\"
-end until 1 > 2
+	
+print "\r|"
+sleep x
+print "\r/"
+sleep x
+print "\r-"
+sleep x
+print "\r\\"
+sleep x
+	
+end until false
