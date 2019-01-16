@@ -7,10 +7,8 @@ loop do
 	if word == ""
 		break
 	end
-
-	translation = dictionary[word]
 	
-	if translation == nil
+	if !dictionary.has_key? word
 		print "I'm sorry, no such word is available. Do you know the translation (Y/N)? "
 		ans = gets.strip.upcase
 
