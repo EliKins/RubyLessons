@@ -17,12 +17,13 @@ loop do
 		if ans == "Y"
 			print "Translation: "
 			translatedWord = gets.strip.downcase
-			dictionary[word] = translatedWord
+			dictionary[word] = [translatedWord]
 		end
 	else
-		print "#{word} -> "
+		puts "\n#{word} has #{dictionary[word].count} translation(s)"
+		puts "They are:"
 		dictionary[word].each do |x|
-			print "#{x}, "
+			puts "#{x}"
 		end
 		puts
 	end
