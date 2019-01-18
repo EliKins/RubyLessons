@@ -46,15 +46,11 @@ def checkWin()
 	@winMoves.each do |arr|
 		arr.each do |x|
 			@gameBoard.each do |hash|
-				if hash.has_key?(x) && hash[x] == check
-					wins += 1
-				end
+				wins +=1 if hash.has_key?(x) && hash[x] == check
 			end
 		end
 		
-		if wins == 3
-				return true
-			end
+		return true if wins == 3
 		wins = 0
 	end
 	return false
@@ -63,10 +59,8 @@ end
 begin
 	win = false
 	emptyBoard()
-
-	if rand(0..1) == 1
-		@playerTurn = !@playerTurn
-	end
+	
+	@playerTurn = !@playerTurn if rand(0..1) == 1
 
 	while win == false
 		if @playerTurn
@@ -74,9 +68,7 @@ begin
 				print "\nYour move: "
 				move = gets.to_i
 
-				if isBlockFree(move)
-					break
-				end
+				break if isBlockFree(move)
 				puts "Move is invalid"
 				showGameboard()
 			end
